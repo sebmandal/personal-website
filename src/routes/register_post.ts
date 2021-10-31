@@ -1,7 +1,7 @@
 import Route from '../core/route'
 import Express from 'express'
 import fs from 'fs'
-import bcrypt from 'bcrypt'
+import bcrypt from 'bcryptjs'
 
 const script = (req: Express.Request, res: Express.Response) => {
     if (req.signedCookies.user) res.redirect('/')
@@ -23,10 +23,10 @@ const script = (req: Express.Request, res: Express.Response) => {
         }
     }
 
-    res.redirect('/login')
+    return res.redirect('/login')
 }
 
-export default class LoginPost extends Route {
+export default class RegisterPost extends Route {
     /**
      * super()
      * parameter 1: the URL path
@@ -34,6 +34,6 @@ export default class LoginPost extends Route {
      * parameter 3: the Express middleware/handler function
      **/
     constructor() {
-        super('/login', 'post', script)
+        super('/register', 'post', script)
     }
 }

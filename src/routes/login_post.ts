@@ -1,7 +1,7 @@
 import Route from '../core/route'
 import Express from 'express'
 import fs from 'fs'
-import bcrypt from 'bcrypt'
+import bcrypt from 'bcryptjs'
 
 const script = (req: Express.Request, res: Express.Response) => {
     if (req.signedCookies.user) res.redirect('/')

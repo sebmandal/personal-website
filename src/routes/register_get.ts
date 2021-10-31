@@ -2,12 +2,12 @@ import Route from '../core/route'
 import Express from 'express'
 
 const script = (req: Express.Request, res: Express.Response) => {
-    /**
-     * @todo
-     */
+    if (req.signedCookies.user) return res.redirect('/')
+
+    return res.render('render/register', {})
 }
 
-export default class MessagesGet extends Route {
+export default class RegisterGet extends Route {
     /**
      * @inheritdoc
      * @param {string} path
@@ -17,6 +17,6 @@ export default class MessagesGet extends Route {
      **/
 
     constructor() {
-        super('/messages', 'get', script)
+        super('/register', 'get', script)
     }
 }

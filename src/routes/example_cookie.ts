@@ -2,7 +2,7 @@ import Route from '../core/route'
 import Express from 'express'
 
 const script = (req: Express.Request, res: Express.Response) => {
-    return res.redirect('/')
+    return
 
     /**
      * @description This is a template for setting cookies, for future dev reference.
@@ -26,6 +26,10 @@ export default class CookieSetGet extends Route {
      * parameter 3: the Express middleware/handler function
      **/
     constructor() {
-        super('/cookie/set', 'get', script)
+        super(
+            '/example-cookie-this-is-not-meant-to-be-used-just-example-you-know-lol',
+            'get',
+            script
+        )
     }
 }
