@@ -7,19 +7,42 @@ const script = (req: Express.Request, res: Express.Response) => {
     if (req.signedCookies.user) res.redirect('/')
 
     if (req.body.username && req.body.password) {
-        let user = JSON.parse(fs.readFileSync('./db.json', 'utf-8')).users.find(
-            (user: any) => user.name === req.body.username
-        )
+        const user: any =
+            JSON.parse(
+                fs.readFileSync(
+                    `./data/users/${req.body.username}.json`,
+                    'utf8'
+                )
+            ) || undefined
 
         if (!user) {
-            const dbData = JSON.parse(fs.readFileSync('./db.json', 'utf-8'))
-            const salt = bcrypt.genSaltSync()
-            const hash = bcrypt.hashSync(req.body.password, salt)
-            dbData.users.push({
-                name: req.body.username,
-                password: hash,
+            bcrypt.hash(req.body.password, 10, (err, hash) => {
+                if (err) console.log(err)
+                else {
+                    fs.writeFileSync(
+                        `./data/users/${req.body.username}.json`,
+                        JSON.stringify(
+                            {
+                                username: req.body.username,
+                                password: hash,
+                            },
+                            null,
+                            4
+                        )
+                    )
+                    req.app.set('message', {
+                        content: 'You have successfully registered!',
+                        type: 'success',
+                    })
+                    return res.redirect('/')
+                }
             })
-            fs.writeFileSync('./db.json', JSON.stringify(dbData, null, 4))
+        } else {
+            req.app.set('message', {
+                content: 'User already exists',
+                type: 'error',
+            })
+            return res.redirect('/register')
         }
     }
 

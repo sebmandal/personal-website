@@ -1,5 +1,5 @@
 extends ../master
-block content    
+block content
     .login-form
         .login-form-header
             h1 Login
@@ -11,5 +11,6 @@ block content
                 .form-group
                     label(for="password") Password
                     input(type="password", name="password", id="password", placeholder="Password", required)
-                .form-group
-                    input(type="submit", value="Login" style="font-family: inherit")
+                .form-group.last-form-group
+                    input(type="submit", value="Login")
+            a(href="/register") Register

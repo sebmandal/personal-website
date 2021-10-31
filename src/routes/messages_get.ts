@@ -1,10 +1,22 @@
 import Route from '../core/route'
 import Express from 'express'
+import fs from 'fs'
 
 const script = (req: Express.Request, res: Express.Response) => {
     /**
-     * @todo
+     * @description Returning a JSON object with the messages of the user
+     * @returns {object}
      */
+
+    if (!req.signedCookies.user) return res.redirect('/')
+
+    const user = req.signedCookies.user
+
+    const messages = JSON.parse(
+        fs.readFileSync(`./data/messages/${user}.json`, 'utf8')
+    )
+
+    return res.json(messages || [])
 }
 
 export default class MessagesGet extends Route {

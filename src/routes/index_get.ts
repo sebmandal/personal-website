@@ -4,7 +4,12 @@ import Express from 'express'
 const script = (req: Express.Request, res: Express.Response) => {
     if (!req.signedCookies.user) return res.redirect('/login')
 
-    return res.render('render/index', { user: req.signedCookies.user })
+    res.render('render/index', {
+        user: req.signedCookies.user,
+        message: req.app.get('message') || '',
+    })
+
+    return req.app.set('message', undefined)
 }
 
 export default class IndexGet extends Route {

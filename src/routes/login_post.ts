@@ -7,22 +7,32 @@ const script = (req: Express.Request, res: Express.Response) => {
     if (req.signedCookies.user) res.redirect('/')
 
     if (req.body.username && req.body.password) {
-        let user = JSON.parse(fs.readFileSync('./db.json', 'utf-8')).users.find(
-            (user: any) => user.name === req.body.username
-        )
+        const user: any =
+            JSON.parse(
+                fs.readFileSync(
+                    `./data/users/${req.body.username}.json`,
+                    'utf8'
+                )
+            ) || undefined
 
-        if (user && bcrypt.compareSync(req.body.password, user.password)) {
-            res.cookie('user', user, {
-                maxAge: 1000 * 60 * 60 * 24 * 365, // 1 year
-                httpOnly: true, // only allow cookies to be sent over http
-                signed: true, // sign the cookie
-                // secure: true, // only allow cookies to be sent over https
-            })
-            res.redirect('/')
+        if (user) {
+            if (bcrypt.compareSync(req.body.password, user.password)) {
+                res.cookie('user', user, { signed: true })
+                req.app.set('message', {
+                    content: 'You have been logged in!',
+                    type: 'success',
+                })
+                return res.redirect('/')
+            }
         }
     }
 
-    res.redirect('/login')
+    req.app.set('message', {
+        content:
+            "Incorrect username or password. Please try again or <a href='/register'>register</a>.",
+        type: 'error',
+    })
+    return res.redirect('/login')
 }
 
 export default class LoginPost extends Route {

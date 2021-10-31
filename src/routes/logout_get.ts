@@ -6,6 +6,10 @@ const script = (req: Express.Request, res: Express.Response) => {
 
     res.clearCookie('user')
 
+    req.app.set('message', {
+        content: 'You have been logged out.',
+        type: 'success',
+    })
     return res.redirect('/login')
 }
 

@@ -4,13 +4,15 @@ body {
   font-family: "Ubuntu Mono", monospace;
   font-size: 16px;
   line-height: 1.5;
-  color: #333;
-  background-color: #fff;
+  color: white;
+  background-color: #1a1a1a;
+  margin: 0;
+  padding: 1rem;
 }
 
 .register-form {
   width: 360px;
-  margin: 0 auto;
+  margin: auto;
   padding: 30px;
 }
 .register-form .register-form-header {
@@ -24,8 +26,14 @@ body {
 .register-form .register-form-body {
   padding: 20px;
   background-color: #fff;
-  border-radius: 4px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+.register-form .register-form-body .last-form-group {
+  margin-bottom: 0;
+}
+.register-form .register-form-body a {
+  text-decoration: none;
+  color: black;
 }
 .register-form .register-form-body .form-group {
   margin-bottom: 20px;
@@ -60,7 +68,7 @@ body {
 
 .login-form {
   width: 360px;
-  margin: 0 auto;
+  margin: auto;
   padding: 30px;
 }
 .login-form .login-form-header {
@@ -74,8 +82,14 @@ body {
 .login-form .login-form-body {
   padding: 20px;
   background-color: #fff;
-  border-radius: 4px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+.login-form .login-form-body .last-form-group {
+  margin-bottom: 0;
+}
+.login-form .login-form-body a {
+  text-decoration: none;
+  color: black;
 }
 .login-form .login-form-body .form-group {
   margin-bottom: 20px;
@@ -105,6 +119,32 @@ body {
 }
 .login-form .login-form-body .form-group input[type=submit]:active {
   background-color: #313131;
+  color: #fff;
+}
+
+.alerts {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  text-align: center;
+  color: white;
+}
+.alerts .alert {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+.alerts .alert-success {
+  background-color: #4caf50;
+}
+.alerts .alert-danger {
+  background-color: #f44336;
+}
+.alerts .alert-warning {
+  background-color: #ff9800;
+}
+
+a {
   color: #fff;
 }
 
