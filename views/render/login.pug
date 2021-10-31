@@ -1,0 +1,15 @@
+extends ../master
+block content    
+    .login-form
+        .login-form-header
+            h1 Login
+        .login-form-body
+            form(action="/login", method="post")
+                .form-group
+                    label(for="username") Username
+                    input(type="text", name="username", id="username", placeholder="Username", required)
+                .form-group
+                    label(for="password") Password
+                    input(type="password", name="password", id="password", placeholder="Password", required)
+                .form-group
+                    input(type="submit", value="Login" style="font-family: inherit")
