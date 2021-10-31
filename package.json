@@ -8,7 +8,7 @@
         "pug": "^3.0.2",
         "sass": "^1.43.4"
     },
-    "name": "personal-website",
+    "name": "salvus-messaging-platform",
     "version": "1.0.0",
     "description": "My personal website",
     "main": "dist/index.js",
