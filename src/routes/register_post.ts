@@ -8,12 +8,10 @@ const script = (req: Express.Request, res: Express.Response) => {
 
     if (req.body.username && req.body.password) {
         const user: any =
-            JSON.parse(
-                fs.readFileSync(
-                    `./data/users/${req.body.username}.json`,
-                    'utf8'
-                )
-            ) || undefined
+            fs
+                .readdirSync('./data/users')
+                .find((user) => user.split('.')[0] === req.body.username) ||
+            undefined
 
         if (!user) {
             bcrypt.hash(req.body.password, 10, (err, hash) => {
@@ -23,18 +21,18 @@ const script = (req: Express.Request, res: Express.Response) => {
                         `./data/users/${req.body.username}.json`,
                         JSON.stringify(
                             {
-                                username: req.body.username,
+                                name: req.body.username,
                                 password: hash,
                             },
                             null,
                             4
                         )
                     )
+
                     req.app.set('message', {
                         content: 'You have successfully registered!',
                         type: 'success',
                     })
-                    return res.redirect('/')
                 }
             })
         } else {
