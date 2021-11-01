@@ -4,9 +4,10 @@ import Express from 'express'
 const script = (req: Express.Request, res: Express.Response) => {
     if (req.signedCookies.user) return res.redirect('/')
 
-    res.render('render/login', { message: req.app.get('message') || '' })
+    let message = req.signedCookies.message
+    res.cookie('message', undefined, { signed: true })
 
-    return req.app.set('message', undefined)
+    return res.render('render/login', { message: message })
 }
 
 export default class LoginGet extends Route {

@@ -1,4 +1,8 @@
 extends ../master
 block content
     h1 Welcome back, #{user.name}!
+    a(href="/messages/") Messages
+    br
+    a(href="/messages/send") Send a message
+    br
     a(href='/logout') Logout

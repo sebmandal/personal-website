@@ -18,20 +18,28 @@ const script = (req: Express.Request, res: Express.Response) => {
         if (user) {
             if (bcrypt.compareSync(req.body.password, user.password)) {
                 res.cookie('user', user, { signed: true })
-                req.app.set('message', {
-                    content: 'You have been logged in!',
-                    type: 'success',
-                })
+                res.cookie(
+                    'message',
+                    {
+                        content: 'You have been logged in!',
+                        type: 'success',
+                    },
+                    { signed: true }
+                )
                 return res.redirect('/')
             }
         }
     }
 
-    req.app.set('message', {
-        content:
-            "Incorrect username or password. Please try again or <a href='/register'>register</a>.",
-        type: 'error',
-    })
+    res.cookie(
+        'message',
+        {
+            content:
+                "Incorrect username or password. Please try again or <a href='/register'>register</a>.",
+            type: 'error',
+        },
+        { signed: true }
+    )
     return res.redirect('/login')
 }
 

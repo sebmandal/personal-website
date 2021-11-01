@@ -4,11 +4,12 @@ import Express from 'express'
 const script = (req: Express.Request, res: Express.Response) => {
     if (req.signedCookies.user) return res.redirect('/')
 
-    res.render('render/register', {
-        message: req.app.get('message') || '',
-    })
+    let message = req.signedCookies.message
+    res.cookie('message', undefined, { signed: true })
 
-    return req.app.set('message', undefined)
+    res.render('render/register', {
+        message: message,
+    })
 }
 
 export default class RegisterGet extends Route {

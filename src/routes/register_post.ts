@@ -6,12 +6,25 @@ import bcrypt from 'bcryptjs'
 const script = (req: Express.Request, res: Express.Response) => {
     if (req.signedCookies.user) res.redirect('/')
 
-    if (req.body.username && req.body.password) {
+    if (req.body.username && req.body.password && req.body.email) {
         const user: any =
             fs
                 .readdirSync('./data/users')
                 .find((user) => user.split('.')[0] === req.body.username) ||
             undefined
+
+        if (req.body.username.match(' ').length > 0) {
+            res.cookie(
+                'message',
+                {
+                    content: 'Username cannot contain spaces',
+                    type: 'error',
+                },
+                { signed: true }
+            )
+
+            return res.redirect('/register')
+        }
 
         if (!user) {
             bcrypt.hash(req.body.password, 10, (err, hash) => {
@@ -23,23 +36,33 @@ const script = (req: Express.Request, res: Express.Response) => {
                             {
                                 name: req.body.username,
                                 password: hash,
+                                email: req.body.email,
+                                messages: [],
                             },
                             null,
                             4
                         )
                     )
 
-                    req.app.set('message', {
-                        content: 'You have successfully registered!',
-                        type: 'success',
-                    })
+                    res.cookie(
+                        'message',
+                        {
+                            content: 'You have successfully registered!',
+                            type: 'success',
+                        },
+                        { signed: true }
+                    )
                 }
             })
         } else {
-            req.app.set('message', {
-                content: 'User already exists',
-                type: 'error',
-            })
+            res.cookie(
+                'message',
+                {
+                    content: 'User already exists',
+                    type: 'error',
+                },
+                { signed: true }
+            )
             return res.redirect('/register')
         }
     }

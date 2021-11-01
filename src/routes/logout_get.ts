@@ -1,15 +1,17 @@
 import Route from '../core/route'
 import Express from 'express'
+import { signedCookie } from 'cookie-parser'
 
 const script = (req: Express.Request, res: Express.Response) => {
     if (!req.signedCookies.user) return res.redirect('/login')
 
     res.clearCookie('user')
 
-    req.app.set('message', {
-        content: 'You have been logged out.',
-        type: 'success',
-    })
+    res.cookie(
+        'message',
+        { content: 'You have been logged out.', type: 'success' },
+        { signed: true }
+    )
     return res.redirect('/login')
 }
 

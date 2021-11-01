@@ -1,0 +1,7 @@
+extends ../master
+block content
+    a(href="/messages/send") Send a message
+    for message in messages
+        .message-container
+            .message-content= message.message
+            .message-sender - #{message.sender}
