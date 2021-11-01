@@ -19,7 +19,7 @@ const script = (req: Express.Request, res: Express.Response) => {
     res.cookie('message', undefined, { signed: true })
 
     return res.render('render/messages', {
-        messages: messages,
+        messages: messages.reverse(),
         message: message,
     })
 }
