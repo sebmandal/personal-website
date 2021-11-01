@@ -16,19 +16,37 @@ const script = (req: Express.Request, res: Express.Response) => {
                 .readdirSync(`./data/users`)
                 .find((user) => user.split('.')[0] == recipient)
         ) {
+            // if the recipient exists, we will append the message to the recipient's messages_received
             let user = JSON.parse(
                 fs.readFileSync(`./data/users/${recipient}.json`, 'utf-8')
             )
-            let messages = user.messages
+            let messages = user.messages_received
             messages.push({
                 sender: sender,
                 message: message,
             })
-            user.messages = messages
+            user.messages_received = messages
             fs.writeFileSync(
                 `./data/users/${recipient}.json`,
                 JSON.stringify(user)
             )
+
+            // we will append the message to the sender's messages_sent
+            let user2 = JSON.parse(
+                fs.readFileSync(`./data/users/${sender}.json`, 'utf-8')
+            )
+            let messages2 = user2.messages_sent
+            messages2.push({
+                sender: sender,
+                message: message,
+            })
+            user2.messages_sent = messages2
+            fs.writeFileSync(
+                `./data/users/${sender}.json`,
+                JSON.stringify(user2)
+            )
+
+            // letting the user know that the message was sent successfully and redirecting them to the inbox
             res.cookie(
                 'message',
                 {
@@ -40,6 +58,7 @@ const script = (req: Express.Request, res: Express.Response) => {
             return res.redirect('/messages')
         }
 
+        // if the recipient doesn't exist, we will let the user know that the recipient doesn't exist
         res.cookie(
             'message',
             {

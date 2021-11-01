@@ -36,7 +36,8 @@ const script = (req: Express.Request, res: Express.Response) => {
                         name: req.body.username,
                         password: hash,
                         email: req.body.email,
-                        messages: [],
+                        messages_received: [],
+                        messages_sent: [],
                     },
                     null,
                     4
