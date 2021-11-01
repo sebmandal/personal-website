@@ -13,7 +13,7 @@ const script = (req: Express.Request, res: Express.Response) => {
                 .find((user) => user.split('.')[0] === req.body.username) ||
             undefined
 
-        if (req.body.username.match(' ').length > 0) {
+        if (req.body.username.split(' ').length > 1) {
             res.cookie(
                 'message',
                 {
@@ -27,33 +27,32 @@ const script = (req: Express.Request, res: Express.Response) => {
         }
 
         if (!user) {
-            bcrypt.hash(req.body.password, 10, (err, hash) => {
-                if (err) console.log(err)
-                else {
-                    fs.writeFileSync(
-                        `./data/users/${req.body.username}.json`,
-                        JSON.stringify(
-                            {
-                                name: req.body.username,
-                                password: hash,
-                                email: req.body.email,
-                                messages: [],
-                            },
-                            null,
-                            4
-                        )
-                    )
+            const hash = bcrypt.hashSync(req.body.password, 10)
 
-                    res.cookie(
-                        'message',
-                        {
-                            content: 'You have successfully registered!',
-                            type: 'success',
-                        },
-                        { signed: true }
-                    )
-                }
-            })
+            fs.writeFileSync(
+                `./data/users/${req.body.username}.json`,
+                JSON.stringify(
+                    {
+                        name: req.body.username,
+                        password: hash,
+                        email: req.body.email,
+                        messages: [],
+                    },
+                    null,
+                    4
+                )
+            )
+
+            res.cookie(
+                'message',
+                {
+                    content: 'You have successfully registered!',
+                    type: 'success',
+                },
+                { signed: true }
+            )
+
+            return res.redirect('/login')
         } else {
             res.cookie(
                 'message',
@@ -63,11 +62,17 @@ const script = (req: Express.Request, res: Express.Response) => {
                 },
                 { signed: true }
             )
+
             return res.redirect('/register')
         }
     }
 
-    return res.redirect('/login')
+    res.cookie(
+        'message',
+        { content: 'Please fill in all fields', type: 'error' },
+        { signed: true }
+    )
+    return res.redirect('/register')
 }
 
 export default class RegisterPost extends Route {
