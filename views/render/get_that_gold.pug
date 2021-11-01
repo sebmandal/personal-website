@@ -1,0 +1,133 @@
+extends ../master
+block content
+    style.
+        body {
+            font-family: "Poppins", sans-serif;
+        }
+        .square {
+            height: 20px;
+            width: 20px;
+        }
+        .red {
+            background-color: red;
+        }
+        .black {
+            background-color: black;
+        }
+        .gold {
+            background-color: black;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .gold span {
+            background-color: gold;
+            height: 10px;
+            width: 10px;
+        }
+        .gray {
+            background-color: gray;
+        }
+        .content {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            width: 200px;
+            height: 200px;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+    //
+        The gray blocks represent obstacles
+        The gold blocks represent the goal
+        The red block represent the player
+        The black blocks represent the walkable path
+    .container
+        h1 Get that gold!
+        p
+            | You have stolen 
+            span#gold-counter 0
+            |  gold.
+
+        .content
+
+    #results
+
+    script(src='/get_that_gold/2dMatrixBFS.js')
+    script(src='/get_that_gold/2dMatrixCoordinates.js')
+    script(src='/get_that_gold/2dMatrixGame.js')
+    script(src='/get_that_gold/2dMatrixGold.js')
+    script(src='/get_that_gold/2dMatrixGrid.js')
+    script(src='/get_that_gold/2dMatrixMovements.js')
+    script.
+        main();
+        let pause = false;
+        let highScore = 0;
+        let grays = 0;
+        for (let i = 0; i < 10; i++) {
+        for (let j = 0; j < 10; j++) {
+        if (grid[i][j] === "gray") {
+        grays++;
+        }
+        }
+        }
+        setInterval(function () {
+        if (pause) return;
+        if (grays > 0) grid = placeSquare("gray", grid);
+        writeTilesToDOM(grid);
+        if (!bfs(grid, getPlayerRow(grid), getPlayerCol(grid))) {
+        gold = getGold();
+        setGold(0);
+        main();
+        if (gold > highScore) highScore = gold;
+        document.getElementById("results").innerHTML =
+        "<p>High score: " + highScore + "</p>";
+        }
+        }, 1000);
+        // adding the event listeners
+        document.addEventListener("keydown", function (event) {
+        var key = event.keyCode;
+        if (key === 32) {
+        // 32 = spacebar
+        // if the game is paused
+        if (pause) {
+        // unpause the game
+        pause = false;
+        } else {
+        // pause the game
+        pause = true;
+        }
+        }
+        if (key === 87 || key === 38) {
+        if (pause) return;
+        // 87 = w
+        // 38 = up arrow
+        grid = moveUp(grid);
+        writeTilesToDOM(grid);
+        } else if (key === 65 || key === 37) {
+        if (pause) return;
+        // 65 = a
+        // 37 = left arrow
+        grid = moveLeft(grid);
+        writeTilesToDOM(grid);
+        } else if (key === 83 || key === 40) {
+        if (pause) return;
+        // 83 = s
+        // 40 = down arrow
+        grid = moveDown(grid);
+        writeTilesToDOM(grid);
+        } else if (key === 68 || key === 39) {
+        if (pause) return;
+        // 68 = d
+        // 39 = right arrow
+        grid = moveRight(grid);
+        writeTilesToDOM(grid);
+        }
+        });
