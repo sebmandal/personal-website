@@ -7,11 +7,13 @@ const script = (req: Express.Request, res: Express.Response) => {
     if (req.signedCookies.user) res.redirect('/')
 
     if (req.body.username && req.body.password && req.body.email) {
-        const user: any =
-            fs
-                .readdirSync('./data/users')
-                .find((user) => user.split('.')[0] === req.body.username) ||
-            undefined
+        const db = fs.readdirSync('./data/users').map((file) => {
+            const data = fs.readFileSync(`./data/users/${file}`, 'utf8')
+            return JSON.parse(data)
+        })
+
+        let user = db.find((user) => user.name === req.body.username)
+        if (!user) user = db.find((user) => user.email === req.body.email)
 
         if (req.body.username.split(' ').length > 1) {
             res.cookie(
