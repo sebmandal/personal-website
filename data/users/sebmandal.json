@@ -1,12 +1,7 @@
 {
+    "id": "8392b045-e447-42dc-8939-1f73bbb22cf5",
     "name": "sebmandal",
-    "password": "$2a$10$39sSQLOELxvHkPCwt82dy.0b4N6QVv70k7B/Fy9nPvcAydpdh3ilG",
+    "password": "$2a$10$wTJKTGX2i5B8EsgWjW8YLOOzp4pdd7AbmeSGPm6i57ReKtzC.E07K",
     "email": "sebastian.mandal@icloud.com",
-    "messages_received": [
-        { "sender": "sebmandal", "message": "Wagwan my G" },
-        { "sender": "sebmandal", "message": "Wagwan my g pt. 2" },
-        { "sender": "sebmandal", "message": "Wagwan my G pt. 3" },
-        { "sender": "sebmandal", "message": "Wagwan my g pt. 4" }
-    ],
-    "messages_sent": []
+    "messages": []
 }

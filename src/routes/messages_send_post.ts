@@ -11,6 +11,18 @@ const script = (req: Express.Request, res: Express.Response) => {
         let recipient = req.body.recipient
         let sender = req.signedCookies.user.name
 
+        if (sender === recipient) {
+            res.cookie(
+                'message',
+                {
+                    content: "You can't send a message to yourself!",
+                    type: 'error',
+                },
+                { signed: true }
+            )
+            return res.redirect('/messages/send')
+        }
+
         if (
             fs
                 .readdirSync(`./data/users`)
@@ -20,30 +32,42 @@ const script = (req: Express.Request, res: Express.Response) => {
             let user = JSON.parse(
                 fs.readFileSync(`./data/users/${recipient}.json`, 'utf-8')
             )
-            let messages = user.messages_received
+
+            let messages = user.messages
+
             messages.push({
                 sender: sender,
+                recipient: recipient,
                 message: message,
+                date: new Date().toISOString(),
             })
-            user.messages_received = messages
+
+            user.messages = messages
+
             fs.writeFileSync(
                 `./data/users/${recipient}.json`,
-                JSON.stringify(user)
+                JSON.stringify(user, null, 4)
             )
 
             // we will append the message to the sender's messages_sent
             let user2 = JSON.parse(
                 fs.readFileSync(`./data/users/${sender}.json`, 'utf-8')
             )
-            let messages2 = user2.messages_sent
+
+            let messages2 = user2.messages
+
             messages2.push({
                 sender: sender,
+                recipient: recipient,
                 message: message,
+                time_sent: new Date().toISOString(),
             })
-            user2.messages_sent = messages2
+
+            user2.messages = messages2
+
             fs.writeFileSync(
                 `./data/users/${sender}.json`,
-                JSON.stringify(user2)
+                JSON.stringify(user2, null, 4)
             )
 
             // letting the user know that the message was sent successfully and redirecting them to the inbox
