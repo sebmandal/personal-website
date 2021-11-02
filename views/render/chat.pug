@@ -1,0 +1,24 @@
+extends ../master
+block content
+    .links
+        a(href="/") Back to home
+        |  | 
+        a(href="/messages/send") Send a message
+
+    //- h1 Messages
+    //- for message in messages
+    //-     .message-container
+    //-         .message-content Message: #{message.message}
+    //-         br
+    //-         .message-sender Sender: #{message.sender}
+    //-         .message-recipient Recipient: #{message.recipient}
+
+    script(src="https://cdn.socket.io/4.3.2/socket.io.min.js" integrity="sha384-KAZ4DtjNhLChOB/hxXuKqhMLYvx3b5MlT55xPEiNmREKRzeEm+RVPlTnAn0ajQNs" crossorigin="anonymous")
+    script(defer src="/chat/index.js")
+
+    h1 Chat
+
+    ul#messages
+
+    input#message(type="text")
+    button#send-button Send

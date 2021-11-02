@@ -2,11 +2,14 @@
     "dependencies": {
         "@types/cookie-parser": "^1.4.2",
         "bcryptjs": "^2.4.3",
+        "cookie": "^0.4.1",
         "cookie-parser": "^1.4.5",
         "dotenv": "^10.0.0",
         "express": "^4.17.1",
+        "http": "^0.0.1-security",
         "pug": "^3.0.2",
-        "sass": "^1.43.4"
+        "sass": "^1.43.4",
+        "socket.io": "^4.3.1"
     },
     "name": "salvus-messaging-platform",
     "version": "1.0.0",
@@ -29,6 +32,7 @@
         "@types/bcrypt": "^5.0.0",
         "@types/bcryptjs": "^2.4.2",
         "@types/express": "^4.17.13",
-        "@types/pug": "^2.0.5"
+        "@types/pug": "^2.0.5",
+        "@types/socket.io": "^3.0.2"
     }
 }
