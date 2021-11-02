@@ -1,5 +1,10 @@
 extends ../master
 block content
+    .links
+        a(href="/") Back to home
+        |  | 
+        a(href="/messages/") Back to inbox
+
     .message-form
         .message-form-header
             h1 Send Message
@@ -13,5 +18,3 @@ block content
                     input(type="text", name="recipient", id="recipient", placeholder="username")
                 .form-group
                     input(type="submit", value="Send")
-                .form-group
-                    a(href="/messages" style="color: black") Back to inbox

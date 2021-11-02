@@ -1,10 +1,14 @@
 extends ../master
 block content
-    a(href="/messages/send") Send a message
+    .links
+        a(href="/") Back to home
+        |  | 
+        a(href="/messages/send") Send a message
 
     h1 Messages
     for message in messages
         .message-container
-            .message-content= message.message
-            .message-sender= message.sender
-            .message-recipient= message.recipient
+            .message-content Message: #{message.message}
+            br
+            .message-sender Sender: #{message.sender}
+            .message-recipient Recipient: #{message.recipient}

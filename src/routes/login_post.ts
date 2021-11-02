@@ -7,13 +7,12 @@ const script = (req: Express.Request, res: Express.Response) => {
     if (req.signedCookies.user) res.redirect('/')
 
     if (req.body.username && req.body.password) {
-        const user: any =
-            JSON.parse(
-                fs.readFileSync(
-                    `./data/users/${req.body.username}.json`,
-                    'utf8'
-                )
-            ) || undefined
+        const db = fs.readdirSync('./data/users').map((file) => {
+            const data = fs.readFileSync(`./data/users/${file}`, 'utf8')
+            return JSON.parse(data)
+        })
+
+        let user = db.find((user) => user.name === req.body.username)
 
         if (user) {
             if (bcrypt.compareSync(req.body.password, user.password)) {
@@ -35,7 +34,7 @@ const script = (req: Express.Request, res: Express.Response) => {
         'message',
         {
             content:
-                "Incorrect username or password. Please try again or <a href='/register'>register</a>.",
+                'Incorrect username or password. Please try again register using the link below.',
             type: 'error',
         },
         { signed: true }
