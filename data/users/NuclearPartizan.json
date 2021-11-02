@@ -1,128 +1,92 @@
 {
-    "id": "8392b045-e447-42dc-8939-1f73bbb22cf5",
-    "name": "sebmandal",
-    "password": "$2a$10$wTJKTGX2i5B8EsgWjW8YLOOzp4pdd7AbmeSGPm6i57ReKtzC.E07K",
-    "email": "sebastian.mandal@icloud.com",
+    "id": "3a7e3491-0c79-4d06-893e-21bc6d57ce34",
+    "name": "NuclearPartizan",
+    "password": "$2a$10$rx8CBaSUwdkRKf3I4M16muDXQ75ElXK9HyM6gEv8hCTCTw02uYcUu",
+    "email": "aidan.labanauskas@gmail.com",
     "messages": [
-        {
-            "sender": "NuclearPartizan",
-            "recipient": "sebmandal",
-            "message": "hello, sir",
-            "date": "2021-11-01T17:26:08.661Z"
-        },
-        {
-            "sender": "NuclearPartizan",
-            "recipient": "sebmandal",
-            "message": "hello, sir",
-            "date": "2021-11-01T17:26:14.952Z"
-        },
-        {
-            "sender": "NuclearPartizan",
-            "recipient": "sebmandal",
-            "message": "hello, sir",
-            "date": "2021-11-01T17:26:17.728Z"
-        },
         {
             "sender": "sebmandal",
             "recipient": "NuclearPartizan",
             "message": "Hello dickhead",
-            "time_sent": "2021-11-01T17:29:06.532Z"
+            "date": "2021-11-01T17:29:06.532Z"
         },
         {
             "sender": "NuclearPartizan",
             "recipient": "sebmandal",
             "message": "whats good my nigerian",
-            "date": "2021-11-01T17:29:24.922Z"
+            "time_sent": "2021-11-01T17:29:24.922Z"
         },
         {
             "sender": "sebmandal",
             "recipient": "NuclearPartizan",
             "message": "wagwan my nigerian prince",
-            "time_sent": "2021-11-01T17:31:31.696Z"
+            "date": "2021-11-01T17:31:31.695Z"
         },
         {
             "sender": "NuclearPartizan",
             "recipient": "sebmandal",
             "message": "hehe boi",
-            "date": "2021-11-01T17:31:50.023Z"
+            "time_sent": "2021-11-01T17:31:50.023Z"
         },
         {
             "sender": "sebmandal",
             "recipient": "NuclearPartizan",
             "message": "Wagwan my dickhead",
-            "time_sent": "2021-11-01T18:48:51.966Z"
+            "date": "2021-11-01T18:48:51.965Z"
         },
         {
             "sender": "sebmandal",
             "recipient": "NuclearPartizan",
             "message": "In Congress, July 4, 1776\r\n\r\nThe unanimous Declaration of the thirteen united States of America, When in the Course of human events, it becomes necessary for one people to dissolve the political bands which have connected them with another, and to assume among the powers of the earth, the separate and equal station to which the Laws of Nature and of Nature's God entitle them, a decent respect to the opinions of mankind requires that they should declare the causes which impel them to the separation.\r\n\r\nWe hold these truths to be self-evident, that all men are created equal, that they are endowed by their Creator with certain unalienable Rights, that among these are Life, Liberty and the pursuit of Happiness.--That to secure these rights, Governments are instituted among Men, deriving their just powers from the consent of the governed, --That whenever any Form of Government becomes destructive of these ends, it is the Right of the People to alter or to abolish it, and to institute new Government, laying its foundation on such principles and organizing its powers in such form, as to them shall seem most likely to effect their Safety and Happiness. Prudence, indeed, will dictate that Governments long established should not be changed for light and transient causes; and accordingly all experience hath shewn, that mankind are more disposed to suffer, while evils are sufferable, than to right themselves by abolishing the forms to which they are accustomed. But when a long train of abuses and usurpations, pursuing invariably the same Object evinces a design to reduce them under absolute Despotism, it is their right, it is their duty, to throw off such Government, and to provide new Guards for their future security.--Such has been the patient sufferance of these Colonies; and such is now the necessity which constrains them to alter their former Systems of Government. The history of the present King of Great Britain is a history of repeated injuries and usurpations, all having in direct object the establishment of an absolute Tyranny over these States. To prove this, let Facts be submitted to a candid world.\r\n\r\nHe has refused his Assent to Laws, the most wholesome and necessary for the public good.\r\n\r\nHe has forbidden his Governors to pass Laws of immediate and pressing importance, unless suspended in their operation till his Assent should be obtained; and when so suspended, he has utterly neglected to attend to them.\r\n\r\nHe has refused to pass other Laws for the accommodation of large districts of people, unless those people would relinquish the right of Representation in the Legislature, a right inestimable to them and formidable to tyrants only.\r\n\r\nHe has called together legislative bodies at places unusual, uncomfortable, and distant from the depository of their public Records, for the sole purpose of fatiguing them into compliance with his measures.\r\n\r\nHe has dissolved Representative Houses repeatedly, for opposing with manly firmness his invasions on the rights of the people.\r\n\r\nHe has refused for a long time, after such dissolutions, to cause others to be elected; whereby the Legislative powers, incapable of Annihilation, have returned to the People at large for their exercise; the State remaining in the mean time exposed to all the dangers of invasion from without, and convulsions within.\r\n\r\nHe has endeavoured to prevent the population of these States; for that purpose obstructing the Laws for Naturalization of Foreigners; refusing to pass others to encourage their migrations hither, and raising the conditions of new Appropriations of Lands.\r\n\r\nHe has obstructed the Administration of Justice, by refusing his Assent to Laws for establishing Judiciary powers.\r\n\r\nHe has made Judges dependent on his Will alone, for the tenure of their offices, and the amount and payment of their salaries.\r\n\r\nHe has erected a multitude of New Offices, and sent hither swarms of Officers to harrass our people, and eat out their substance.\r\n\r\nHe has kept among us, in times of peace, Standing Armies without the Consent of our legislatures.\r\n\r\nHe has affected to render the Military independent of and superior to the Civil power.\r\n\r\nHe has combined with others to subject us to a jurisdiction foreign to our constitution, and unacknowledged by our laws; giving his Assent to their Acts of pretended Legislation:\r\n\r\nFor Quartering large bodies of armed troops among us:\r\n\r\nFor protecting them, by a mock Trial, from punishment for any Murders which they should commit on the Inhabitants of these States:\r\n\r\nFor cutting off our Trade with all parts of the world:\r\n\r\nFor imposing Taxes on us without our Consent:\r\n\r\nFor depriving us in many cases, of the benefits of Trial by Jury:\r\n\r\nFor transporting us beyond Seas to be tried for pretended offences\r\n\r\nFor abolishing the free System of English Laws in a neighbouring Province, establishing therein an Arbitrary government, and enlarging its Boundaries so as to render it at once an example and fit instrument for introducing the same absolute rule into these Colonies:\r\n\r\nFor taking away our Charters, abolishing our most valuable Laws, and altering fundamentally the Forms of our Governments:\r\n\r\nFor suspending our own Legislatures, and declaring themselves invested with power to legislate for us in all cases whatsoever.\r\n\r\nHe has abdicated Government here, by declaring us out of his Protection and waging War against us.\r\n\r\nHe has plundered our seas, ravaged our Coasts, burnt our towns, and destroyed the lives of our people.\r\n\r\nHe is at this time transporting large Armies of foreign Mercenaries to compleat the works of death, desolation and tyranny, already begun with circumstances of Cruelty & perfidy scarcely paralleled in the most barbarous ages, and totally unworthy the Head of a civilized nation.\r\n\r\nHe has constrained our fellow Citizens taken Captive on the high Seas to bear Arms against their Country, to become the executioners of their friends and Brethren, or to fall themselves by their Hands.\r\n\r\nHe has excited domestic insurrections amongst us, and has endeavoured to bring on the inhabitants of our frontiers, the merciless Indian Savages, whose known rule of warfare, is an undistinguished destruction of all ages, sexes and conditions.\r\n\r\nIn every stage of these Oppressions We have Petitioned for Redress in the most humble terms: Our repeated Petitions have been answered only by repeated injury. A Prince whose character is thus marked by every act which may define a Tyrant, is unfit to be the ruler of a free people.\r\n\r\nNor have We been wanting in attentions to our Brittish brethren. We have warned them from time to time of attempts by their legislature to extend an unwarrantable jurisdiction over us. We have reminded them of the circumstances of our emigration and settlement here. We have appealed to their native justice and magnanimity, and we have conjured them by the ties of our common kindred to disavow these usurpations, which, would inevitably interrupt our connections and correspondence. They too have been deaf to the voice of justice and of consanguinity. We must, therefore, acquiesce in the necessity, which denounces our Separation, and hold them, as we hold the rest of mankind, Enemies in War, in Peace Friends.\r\n\r\nWe, therefore, the Representatives of the united States of America, in General Congress, Assembled, appealing to the Supreme Judge of the world for the rectitude of our intentions, do, in the Name, and by Authority of the good People of these Colonies, solemnly publish and declare, That these United Colonies are, and of Right ought to be Free and Independent States; that they are Absolved from all Allegiance to the British Crown, and that all political connection between them and the State of Great Britain, is and ought to be totally dissolved; and that as Free and Independent States, they have full Power to levy War, conclude Peace, contract Alliances, establish Commerce, and to do all other Acts and Things which Independent States may of right do. And for the support of this Declaration, with a firm reliance on the protection of divine Providence, we mutually pledge to each other our Lives, our Fortunes and our sacred Honor.",
-            "time_sent": "2021-11-01T18:49:28.928Z"
+            "date": "2021-11-01T18:49:28.928Z"
         },
         {
             "sender": "sebmandal",
             "recipient": "NuclearPartizan",
             "message": "<h1>Hello</h1>",
-            "time_sent": "2021-11-01T18:50:15.093Z"
+            "date": "2021-11-01T18:50:15.090Z"
         },
         {
             "sender": "sebmandal",
             "recipient": "NuclearPartizan",
             "message": "#[h1 Hello]",
-            "time_sent": "2021-11-01T18:50:25.071Z"
+            "date": "2021-11-01T18:50:25.071Z"
         },
         {
             "sender": "NuclearPartizan",
             "recipient": "sebmandal",
             "message": "Cock and ball torture (CBT), occasionally known as penis torture, dick torture, or male genitorture/male genital torture, is a sexual activity involving the application of pain or constriction to the penis or testicles. This may involve directly painful activities, such as genital piercing, wax play, genital spanking, squeezing, ball-busting, genital flogging, urethral play, tickle torture, erotic electrostimulation, kneeing or kicking.[1] The recipient of such activities may receive direct physical pleasure via masochism, or emotional pleasure through erotic humiliation, or knowledge that the play is pleasing to a sadistic dominant. Many of these practices carry significant health risks.[2]\r\nSimilar to many other sexual activities, CBT can be performed using toys and devices to make the penis and testicles more easily accessible for attack, or for foreplay purposes.[3][4]\r\nBall stretcher\r\n\r\nA metal ball stretcher and cock ring, which forces penis' erection.\r\nA ball stretcher is a sex toy that is used to elongate the scrotum and provide a feeling of weight pulling the testicles away from the body. This can be particularly enjoyable for the wearer as it can make an orgasm more intense, as testicles are prevented from moving up. Intended to make one's testicles permanently hang much lower than before (if used regularly for extended periods of time), this sex toy can be potentially harmful to the genitals as the circulation of blood can be easily cut off if over-tightened.\r\n\r\nWhile leather stretchers are most common, other models consist of an assortment of steel rings that fastens with screws, causing additional but only mildly uncomfortable weight to the wearer's testicles. The length of the stretcher may vary from 2.5-10 centimeters (about 1-4 inches).[5] A more dangerous type of ball stretcher can be home-made simply by wrapping rope or string around one's scrotum until it is eventually stretched to the desired length.\r\n\r\nBall crusher\r\nA ball crusher is a device made from either metal or often clear acrylic that squeezes the testicles slowly by turning a nut or screw. How tight it is clamped depends on the pain tolerance of the person it is used on. A ball crusher is often combined with bondage, either with a partner or by oneself.\r\n\r\nParachute\r\nA parachute is a small collar, usually made from leather, which fastens around the scrotum, and from which weights can be hung. It is conical in shape, with three or four short chains hanging beneath, to which weights can be attached.\r\n\r\nUsed as part of cock and ball torture within a BDSM relationship, the parachute provides a constant drag, and a squeezing effect on the testicles. Moderate weights of 3–5 kg can be suspended, especially during bondage, though occasionally much heavier weights are used. Smaller weights can be used when the participant wearing it is free to move; the swinging effect of the weight can restrict sudden movements, as well as providing a visual stimulus for the dominant partner.[citation needed]\r\n\r\n",
-            "date": "2021-11-01T18:51:11.222Z"
+            "time_sent": "2021-11-01T18:51:11.223Z"
         },
         {
-            "sender": "sebmandal",
+            "sender": "NuclearPartizan",
             "recipient": "Hangon",
-            "message": "Yooooo velkommen!",
-            "time_sent": "2021-11-01T19:14:38.480Z"
+            "message": "The FitnessGram Pacer test is a multistage aerobic capacity test that progressively gets more difficult as it continues. The 20 meter Pacer test will begin in 30 seconds. Line up at the start. The running speed starts slowly, but gets faster each minute after you hear this signal *boop*. A single lap should be completed each time you hear this sound *ding*. Remember to run in a straight line, and run as long as possible. The second time you fail to complete a lap before the sound, your test is over. The test will begin on the word start. On your mark, get ready, start.",
+            "time_sent": "2021-11-01T19:14:40.666Z"
         },
         {
-            "sender": "sebmandal",
+            "sender": "NuclearPartizan",
             "recipient": "strawbrrymlk",
-            "message": "Yooo velkommen til nettsiden!",
-            "time_sent": "2021-11-01T19:15:21.120Z"
+            "message": "The FitnessGram Pacer test is a multistage aerobic capacity test that progressively gets more difficult as it continues. The 20 meter Pacer test will begin in 30 seconds. Line up at the start. The running speed starts slowly, but gets faster each minute after you hear this signal *boop*. A single lap should be completed each time you hear this sound *ding*. Remember to run in a straight line, and run as long as possible. The second time you fail to complete a lap before the sound, your test is over. The test will begin on the word start. On your mark, get ready, start.",
+            "time_sent": "2021-11-01T19:15:26.765Z"
         },
         {
             "sender": "NuclearPartizan",
             "recipient": "sebmandal",
             "message": "Hallo, my fellow Nigeria",
-            "date": "2021-11-02T07:56:57.167Z"
+            "time_sent": "2021-11-02T07:56:57.167Z"
         },
         {
             "sender": "sebmandal",
             "recipient": "NuclearPartizan",
             "message": "Hello my fellow Nigeria Princess",
-            "time_sent": "2021-11-02T07:57:20.141Z"
-        },
-        {
-            "sender": "sebmandal",
-            "recipient": "Hangon",
-            "message": "Fuck you for not responding to my message",
-            "time_sent": "2021-11-02T08:01:30.826Z"
-        },
-        {
-            "sender": "Hangon",
-            "recipient": "sebmandal",
-            "message": "HI seb",
-            "date": "2021-11-02T08:17:12.139Z"
-        },
-        {
-            "sender": "sebmandal",
-            "recipient": "Hangon",
-            "message": "yooo",
-            "time_sent": "2021-11-02T08:17:22.583Z"
+            "date": "2021-11-02T07:57:20.140Z"
         },
         {
             "sender": "NuclearPartizan",
             "recipient": "sebmandal",
             "message": "Uganda forever",
-            "date": "2021-11-02T10:25:54.557Z"
+            "time_sent": "2021-11-02T10:25:54.558Z"
         }
     ]
 }
