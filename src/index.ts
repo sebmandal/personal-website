@@ -8,7 +8,7 @@ import path from 'path'
 import cookieParser from 'cookie-parser'
 
 // Set up Express app (views, static files, etc.)
-const app = express()
+export const app = express()
 app.set('views', path.join(__dirname, '../views'))
 app.set('view engine', 'pug') // change ejs to whatever you want
 app.use(express.static('./public'))
@@ -35,5 +35,5 @@ app.use((req, res, next) => {
 })
 
 // Start the Express server
-app.listen(process.env.PORT || 3000)
-console.log(`Server started on port ${process.env.PORT || 3000}`)
+app.listen(process.env.PORT || 6904)
+console.log(`Server started on port ${process.env.PORT || 6904}`)
