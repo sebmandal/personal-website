@@ -1,4 +1,4 @@
-const socket = io('ws://localhost:6905', {
+const socket = io('http://143.198.173.186:6905', {
     // change to your own server's port
     transports: ['websocket'],
     upgrade: false,
