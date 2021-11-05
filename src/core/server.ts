@@ -1,6 +1,7 @@
 import cookie from 'cookie'
 import { app } from '../index'
 import http from 'http'
+import fs from 'fs'
 
 export const server = http.createServer(app)
 const io = require('socket.io')(server, {
@@ -27,7 +28,21 @@ io.on('connection', (socket: any) => {
     io.emit('message', `${username} has joined the chat`)
 
     socket.on('message', (msg: string) => {
+        // emitting the message to the chat
         io.emit('message', `${username}: ${msg}`)
+
+        // writing it to the database
+        const db_data = fs.readFileSync('./data/messages.json', 'utf8')
+        const db_messages = JSON.parse(db_data)
+        db_messages.push({
+            username: username,
+            message: msg,
+            timestamp: new Date().toISOString(),
+        })
+        fs.writeFileSync(
+            './data/messages.json',
+            JSON.stringify(db_messages, null, 4)
+        )
     })
 
     socket.on('disconnect', () => {
