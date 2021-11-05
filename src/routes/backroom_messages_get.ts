@@ -12,15 +12,14 @@ const script = (req: Express.Request, res: Express.Response) => {
         return res.redirect('/login')
     }
 
-    const db = fs.readdirSync('./data/users').map((file) => {
-        const data = fs.readFileSync(`./data/users/${file}`, 'utf8')
-        return JSON.parse(data)
-    })
+    const messageDB = JSON.parse(
+        fs.readFileSync('./data/messages.json', 'utf8')
+    )
 
-    res.json(db)
+    res.json(messageDB)
 }
 
-export default class BackroomGet extends Route {
+export default class BackroomMessagesGet extends Route {
     /**
      * @inheritdoc
      * @param {string} path
@@ -30,6 +29,6 @@ export default class BackroomGet extends Route {
      **/
 
     constructor() {
-        super('/backroom/database', 'get', script)
+        super('/backroom/messages', 'get', script)
     }
 }
