@@ -16,9 +16,13 @@ block content
     script(src="https://cdn.socket.io/4.3.2/socket.io.min.js" integrity="sha384-KAZ4DtjNhLChOB/hxXuKqhMLYvx3b5MlT55xPEiNmREKRzeEm+RVPlTnAn0ajQNs" crossorigin="anonymous")
     script(defer src="/chat/index.js")
 
-    h1 Chat
+    link(rel="stylesheet", href="/chat/style.css")
 
-    ul#messages
+    .chat
+        .chat-container
+            h1.chat-title the chat room
 
-    input#message(type="text" autocomplete="off")
-    button#send-button Send
+            ul.chat-messages#messages
+
+            input.chat-input#message(type="text" autocomplete="off")
+            button.chat-send-button#send-button Send
