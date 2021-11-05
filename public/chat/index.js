@@ -1,5 +1,5 @@
-const socket = io('https://salvus2.sebmandal.com', {
-    // ^ http://143.198.173.186:6905 for production // maybe replace with salvus2... if it works
+const socket = io('https://salvus.sebmandal.com', {
+    // ^ https://salvus.sebmandal.com for production
     // ^ ws://localhost:6905 for development
     // change to your own server's port
     transports: ['websocket'],

@@ -17,19 +17,17 @@ io.on('connection', (socket: any) => {
         let userCookies = cookie.parse(
             socket.handshake.headers.cookie.toString()
         )
-        if (userCookies.user) {
+        if (userCookies.user && userCookies.user.length > 0) {
             username = JSON.parse(
                 userCookies.user.substr(4, userCookies.user.length - 48)
             ).name
-        } else {
-            username = 'Unidentified person'
         }
     }
 
     io.emit('message', `${username} has joined the chat`)
 
     socket.on('message', (msg: string) => {
-        io.emit('message', `${username} - ${msg}`)
+        io.emit('message', `${username}: ${msg}`)
     })
 
     socket.on('disconnect', () => {
