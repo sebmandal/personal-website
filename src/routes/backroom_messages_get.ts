@@ -5,10 +5,14 @@ import fs from 'fs'
 const script = (req: Express.Request, res: Express.Response) => {
     if (!req.signedCookies.user) return res.redirect('/login')
     if (req.signedCookies.user.name !== 'sebmandal') {
-        res.cookie('message', {
-            content: "You don't have permission to view the backroom.",
-            type: 'error',
-        })
+        res.cookie(
+            'message',
+            {
+                content: "You don't have permission to view the backroom.",
+                type: 'error',
+            },
+            { signed: true }
+        )
         return res.redirect('/login')
     }
 
