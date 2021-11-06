@@ -38,7 +38,3 @@ app.use((req, res, next) => {
 import { server } from './core/server'
 server.listen(6905)
 console.log(`HTTP server listening on port 6905`)
-
-// // Start the Express server
-// app.listen(process.env.PORT || 6904)
-// console.log(`Server started on port ${process.env.PORT || 6904}`)

@@ -9,3 +9,12 @@ block content
     a(href='/backroom/users') User database (JSON)
     br
     a(href='/backroom/messages') Message database (JSON)
+
+    h1 Chat Room Run Mode 
+    // choice of run mode input
+    form(action='/backroom/runmode', method='post')
+        label(for='runMode') Run Mode:
+        select(name='runMode')
+            option(value='development') Development
+            option(value='production') Production
+        input(type='submit', value='Set')
