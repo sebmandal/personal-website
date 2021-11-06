@@ -1,4 +1,4 @@
-const socket = io('https://salvus.sebmandal.com', {
+const socket = io('ws://localhost:6905', {
     // ^ https://salvus.sebmandal.com for production
     // ^ ws://localhost:6905 for development
     // change to your own server's port
