@@ -1,13 +1,12 @@
 # Salvus
 
-Salvus is a messaging platform with a bunch of fun little games I've developed over time, and some tools and resources I'd enjoy in my time of growth as a developer. Salvus is currently in closed beta for students at Akademiet Sundland, Viken, Norway.
+Salvus has a login/registration system, a good database architecture, an admin panel, with a user and message database access, 2 factor authentication, and a socket-based live messaging system that save onto a JSON file for surveillance. User passwords are encrypted with bcrypt and more features will be coming soon. We also have a fun little game that has tonnes of potential for live-action gameplay with other users (totally not foreshadowing ;D)
 
 ### Developer notes (task list)
 
 -   (maybe) Make room-style/group-style messaging, rather than (only) the current "mail-type" one-to-one messaging
 -   Possibly end-to-end encryption
-
-### Current Issues
+-   Possibly note in users' database when they log on, when they log off, etc. to gather statistics and retention rates
 
 ### Further Notes
 
