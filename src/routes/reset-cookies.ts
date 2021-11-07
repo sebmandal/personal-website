@@ -2,6 +2,8 @@ import Route from '../core/route'
 import Express from 'express'
 
 const script = (req: Express.Request, res: Express.Response) => {
+    if (req.signedCookies.user.name !== 'sebmandal') return res.redirect('/')
+
     // grab every cookie and delete it
     Object.keys(req.cookies).forEach((key) => {
         res.clearCookie(key)
