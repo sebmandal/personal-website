@@ -1,0 +1,10 @@
+extends ../master
+block content
+    form.2fa-form(action="/2fa", method="post")
+        .form-group
+            label.control-label(for="code") 2FA Code
+            input.form-control(type="text" name="code" id="code" placeholder="2FA Code")
+        .form-group
+            input.btn.btn-primary(type="submit" value="Submit")
+        
+    p There should be a 2FA code in your email inbox. If you don't see it, check your spam folder.

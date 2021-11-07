@@ -5,9 +5,12 @@ const script = (req: Express.Request, res: Express.Response) => {
     if (req.signedCookies.user) return res.redirect('/')
 
     let message = req.signedCookies.message
-    res.cookie('message', undefined, { signed: true })
+    res.clearCookie('message')
 
-    return res.render('render/login', { message: message })
+    return res.render('render/login', {
+        title: 'Login | Salvus',
+        message: message,
+    })
 }
 
 export default class LoginGet extends Route {

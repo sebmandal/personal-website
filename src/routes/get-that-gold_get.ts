@@ -5,9 +5,10 @@ const script = (req: Express.Request, res: Express.Response) => {
     if (!req.signedCookies.user) return res.redirect('/login')
 
     let message = req.signedCookies.message
-    res.cookie('message', undefined, { signed: true })
+    res.clearCookie('message')
 
     return res.render('render/get_that_gold', {
+        title: 'Get That Gold | Salvus',
         user: req.signedCookies.user,
         message: message,
     })

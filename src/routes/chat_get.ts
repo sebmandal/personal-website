@@ -5,9 +5,12 @@ const script = (req: Express.Request, res: Express.Response) => {
     if (!req.signedCookies.user) return res.redirect('/')
 
     let message = req.signedCookies.message
-    res.cookie('message', undefined, { signed: true })
+    res.clearCookie('message')
 
-    return res.render('render/chat', { message: message })
+    return res.render('render/chat', {
+        title: 'Chat | Salvus',
+        message: message,
+    })
 }
 
 export default class ChatGet extends Route {

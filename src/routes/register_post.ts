@@ -4,7 +4,7 @@ import fs from 'fs'
 import bcrypt from 'bcryptjs'
 
 const script = (req: Express.Request, res: Express.Response) => {
-    if (req.signedCookies.user) res.redirect('/')
+    if (req.signedCookies.user) return res.redirect('/')
 
     if (req.body.username && req.body.password && req.body.email) {
         const db = fs.readdirSync('./data/users').map((file) => {

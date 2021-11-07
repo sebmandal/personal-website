@@ -4,12 +4,10 @@ Salvus is a messaging platform with a bunch of fun little games I've developed o
 
 ### Developer notes (task list)
 
--   Use websockets for messaging, not reading from the JSON db upon request.
--   Make room-style/group-style messaging, rather than (only) the current "mail-type" one-to-one messaging
+-   (maybe) Make room-style/group-style messaging, rather than (only) the current "mail-type" one-to-one messaging
 -   Possibly end-to-end encryption
--   Make a database for messages and rooms
--   Possibly change user database architecture
--   Possibly add a "pending_message" system so that a message is queued up for sending, and then sent once the connection is open.
+
+### Current Issues
 
 ### Further Notes
 

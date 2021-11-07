@@ -17,11 +17,18 @@ const script = (req: Express.Request, res: Express.Response) => {
     }
 
     let message = req.signedCookies.message
-    res.cookie('message', undefined, { signed: true })
+    res.clearCookie('message')
+
+    let runMode = fs
+        .readFileSync('./public/chat/index.js')
+        .toString()
+        .split('\n')[0]
 
     return res.render('render/backroom', {
+        title: 'Backroom | Salvus',
         user: req.signedCookies.user,
         message: message,
+        runMode: runMode.includes('localhost') ? 'development' : 'production',
     })
 }
 

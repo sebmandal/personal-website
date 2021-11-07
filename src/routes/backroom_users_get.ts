@@ -16,6 +16,8 @@ const script = (req: Express.Request, res: Express.Response) => {
         return res.redirect('/login')
     }
 
+    res.clearCookie('message')
+
     const db = fs.readdirSync('./data/users').map((file) => {
         const data = fs.readFileSync(`./data/users/${file}`, 'utf8')
         return JSON.parse(data)

@@ -38,3 +38,7 @@ app.use((req, res, next) => {
 import { server } from './core/server'
 server.listen(6905)
 console.log(`HTTP server listening on port 6905`)
+
+// Starting the Express server (never accessed, but for debugging)
+app.listen(6904)
+console.log(`Express server listening on port 6904`)

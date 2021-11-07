@@ -14,7 +14,12 @@ block content
     // choice of run mode input
     form(action='/backroom/runmode', method='post')
         label(for='runMode') Run Mode:
-        select(name='runMode')
-            option(value='development') Development
-            option(value='production') Production
+        if runMode == "development"
+            select(name='runMode')
+                option(value='development' selected) Development
+                option(value='production') Production
+        else
+            select(name='runMode')
+                option(value='development') Development
+                option(value='production' selected) Production
         input(type='submit', value='Set')

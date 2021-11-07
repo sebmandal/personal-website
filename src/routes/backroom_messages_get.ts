@@ -20,6 +20,8 @@ const script = (req: Express.Request, res: Express.Response) => {
         fs.readFileSync('./data/messages.json', 'utf8')
     )
 
+    res.clearCookie('message')
+
     res.json(messageDB)
 }
 
