@@ -8,6 +8,9 @@ Salvus has a login/registration system, a good database architecture, an admin p
 -   Possibly end-to-end encryption
 -   Possibly note in users' database when they log on, when they log off, etc. to gather statistics and retention rates
 
+-   IMPORTANT! Add (admin messages) so you can broadcast something on every page for some time to every user. (this is important because AGREE TO POLICIES!!)
+-   IMPORTANT! Add a cooldown for 2FA and logins, and maybe chat as well
+
 ### Further Notes
 
 ###### bcrypt@5.0.1 does not have the assets required for arm64 to run, so instead, I'm using the bcryptjs module for now

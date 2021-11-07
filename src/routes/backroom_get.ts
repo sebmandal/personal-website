@@ -29,6 +29,9 @@ const script = (req: Express.Request, res: Express.Response) => {
         user: req.signedCookies.user,
         message: message,
         runMode: runMode.includes('localhost') ? 'development' : 'production',
+        adminMessage: JSON.parse(
+            fs.readFileSync('./data/admin_message.json', 'utf8')
+        ),
     })
 }
 

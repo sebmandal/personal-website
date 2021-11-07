@@ -1,5 +1,6 @@
 import Route from '../core/route'
 import Express from 'express'
+import fs from 'fs'
 
 const script = (req: Express.Request, res: Express.Response) => {
     if (!req.signedCookies.user) return res.redirect('/login')
@@ -11,6 +12,9 @@ const script = (req: Express.Request, res: Express.Response) => {
         title: 'Home | Salvus',
         user: req.signedCookies.user,
         message: message,
+        adminMessage: JSON.parse(
+            fs.readFileSync('./data/admin_message.json', 'utf8')
+        ),
     })
 }
 

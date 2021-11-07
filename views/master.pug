@@ -14,9 +14,16 @@ html(lang="en")
         if message
             .alerts
                 if message.type == 'error'
-                    .alert.alert-danger= message.content
+                    .alert.alert-danger!= message.content
                 else if message.type == 'success'
-                    .alert.alert-success= message.content
+                    .alert.alert-success!= message.content
+        
+        if adminMessage.content
+            .admin-alerts
+                if adminMessage.type == 'error'
+                    .alert.alert-danger!= adminMessage.content
+                else if adminMessage.type == 'success'
+                    .alert.alert-success!= adminMessage.content
 
         a(href="/")
             h1(style="text-align: center; padding: 10px; background-color: #fafafa; width: 200px; color: black; margin: 0 auto") Salvus
@@ -26,5 +33,9 @@ html(lang="en")
         script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js")
         script.
             setTimeout(function() {
-                $('.alert').fadeOut('slow');
+                $('.alerts').fadeOut('slow');
+            }, 3000);
+
+            setTimeout(function() {
+                $('.admin-alerts').fadeOut('slow');
             }, 3000);

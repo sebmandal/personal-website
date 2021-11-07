@@ -240,3 +240,29 @@ a {
     background-color: #2a2a2a;
     box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.411);
 }
+
+.admin-alerts {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    text-align: center;
+    color: white;
+
+    .alert {
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    }
+
+    .alert-success {
+        background-color: #4caf50;
+    }
+
+    .alert-danger {
+        background-color: #f44336;
+    }
+
+    .alert-warning {
+        background-color: #ff9800;
+    }
+}

@@ -43,6 +43,26 @@ io.on('connection', (socket: any) => {
             './data/messages.json',
             JSON.stringify(db_messages, null, 4)
         )
+
+        // pushing the message to the user's file
+        const userFile = `./data/users/${username}.json`
+        const userData = JSON.parse(fs.readFileSync(userFile, 'utf8'))
+        if (userData.messages) {
+            userData.messages.push({
+                username: username,
+                message: msg,
+                timestamp: new Date().toISOString(),
+            })
+        } else {
+            userData.messages = [
+                {
+                    username: username,
+                    message: msg,
+                    timestamp: new Date().toISOString(),
+                },
+            ]
+        }
+        fs.writeFileSync(userFile, JSON.stringify(userData, null, 4))
     })
 
     socket.on('disconnect', () => {

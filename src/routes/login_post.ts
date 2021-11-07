@@ -29,6 +29,27 @@ function genAuthCode(length: number) {
 const script = (req: Express.Request, res: Express.Response) => {
     if (req.signedCookies.user) return res.redirect('/')
 
+    if (process.env.RUNMODE === 'dev') {
+        const db = fs.readdirSync('./data/users').map((file) => {
+            const data = fs.readFileSync(`./data/users/${file}`, 'utf8')
+            return JSON.parse(data)
+        })
+
+        let user = db.find((user) => user.name === req.body.username)
+
+        res.cookie('user', user, { signed: true })
+        res.cookie(
+            'message',
+            {
+                content: 'You have been logged in!',
+                type: 'success',
+            },
+            { signed: true }
+        )
+
+        return res.redirect('/')
+    }
+
     if (req.body.username && req.body.password) {
         const db = fs.readdirSync('./data/users').map((file) => {
             const data = fs.readFileSync(`./data/users/${file}`, 'utf8')

@@ -205,4 +205,26 @@ a {
   box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.411);
 }
 
+.admin-alerts {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  text-align: center;
+  color: white;
+}
+.admin-alerts .alert {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+.admin-alerts .alert-success {
+  background-color: #4caf50;
+}
+.admin-alerts .alert-danger {
+  background-color: #f44336;
+}
+.admin-alerts .alert-warning {
+  background-color: #ff9800;
+}
+
 /*# sourceMappingURL=style.css.map */

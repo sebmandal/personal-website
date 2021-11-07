@@ -1,5 +1,6 @@
 import Route from '../core/route'
 import Express from 'express'
+import fs from 'fs'
 
 const script = (req: Express.Request, res: Express.Response) => {
     if (!req.signedCookies.user) return res.redirect('/')
@@ -10,6 +11,9 @@ const script = (req: Express.Request, res: Express.Response) => {
     return res.render('render/chat', {
         title: 'Chat | Salvus',
         message: message,
+        adminMessage: JSON.parse(
+            fs.readFileSync('./data/admin_message.json', 'utf8')
+        ),
     })
 }
 
