@@ -18,7 +18,7 @@ html(lang="en")
                 else if message.type == 'success'
                     .alert.alert-success!= message.content
         
-        if adminMessage.content
+        if adminMessage
             .admin-alerts
                 if adminMessage.type == 'error'
                     .alert.alert-danger!= adminMessage.content

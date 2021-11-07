@@ -43,12 +43,13 @@ app.use((req, res, next) => {
         if (!userData.visits[req.url][req.ip][req.method]) {
             userData.visits[req.url][req.ip][req.method] = {
                 count: 1,
-                times: [new Date()],
+                times: [],
             }
         }
         userData.visits[req.url][req.ip][req.method]['count']++
         userData.visits[req.url][req.ip][req.method]['times'].push({
             time: new Date(),
+            agent: req.headers['user-agent'],
         })
         fs.writeFileSync(userFile, JSON.stringify(userData, null, 4))
     }

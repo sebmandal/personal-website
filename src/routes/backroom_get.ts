@@ -24,14 +24,15 @@ const script = (req: Express.Request, res: Express.Response) => {
         .toString()
         .split('\n')[0]
 
+    let adminMessage = JSON.parse(
+        fs.readFileSync('./data/admin_message.json', 'utf8')
+    )
     return res.render('render/backroom', {
         title: 'Backroom | Salvus',
         user: req.signedCookies.user,
         message: message,
         runMode: runMode.includes('localhost') ? 'development' : 'production',
-        adminMessage: JSON.parse(
-            fs.readFileSync('./data/admin_message.json', 'utf8')
-        ),
+        adminMessage: adminMessage === {} ? undefined : adminMessage,
     })
 }
 

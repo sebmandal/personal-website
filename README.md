@@ -4,12 +4,17 @@ Salvus has a login/registration system, a good database architecture, an admin p
 
 ### Developer notes (task list)
 
+#### Long term
+
 -   (maybe) Make room-style/group-style messaging, rather than (only) the current "mail-type" one-to-one messaging
 -   Possibly end-to-end encryption
 -   Possibly note in users' database when they log on, when they log off, etc. to gather statistics and retention rates
 
--   IMPORTANT! Add (admin messages) so you can broadcast something on every page for some time to every user. (this is important because AGREE TO POLICIES!!)
--   IMPORTANT! Add a cooldown for 2FA and logins, and maybe chat as well
+#### Short term (important)
+
+-   Add (admin messages) so you can broadcast something on every page for some time to every user. (this is important because AGREE TO POLICIES!!)
+-   Add a cooldown for 2FA and logins, and maybe chat as well
+-   Add 2FA for registration
 
 ### Further Notes
 
