@@ -12,9 +12,9 @@ Salvus has a login/registration system, a good database architecture, an admin p
 
 #### Short term (important)
 
--   Add (admin messages) so you can broadcast something on every page for some time to every user. (this is important because AGREE TO POLICIES!!)
 -   Add a cooldown for 2FA and logins, and maybe chat as well
 -   Add 2FA for registration
+-   Finish fixing JSON storing logins and 2FA authorization, to move away from cookies.
 
 ### Further Notes
 
